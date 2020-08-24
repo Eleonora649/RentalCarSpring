@@ -1,24 +1,28 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE tiles-definitions PUBLIC
-       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
-       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>  
 
-<tiles-definitions>
+<!-- Specifico le configurazioni -->
 
-    <!-- Default Main Template -->
-    <definition name="baseLayout" template="/WEB-INF/layouts/template/base.jsp"> <!-- file di base che ha la struttura che avranno tutte le nostre pagine che usano il tiles come tema di base -->
-        <put-attribute name="title" value="" />
-        <put-attribute name="header" value="" />
-        <put-attribute name="content" value="" />
-        <put-attribute name="footer" value="/WEB-INF/layouts/template/footer.jsp" />
-       <!--  <put-attribute name="menu" value="/WEB-INF/template/menu.jsp" />
-        <put-attribute name="body" value="/WEB-INF/template/blank.jsp" /> -->
-    </definition>
- 
-    <definition name="index" extends="baseLayout">
-        <put-attribute name="title" value="Benvenuti in Noleggio Auto" />
-        <put-attribute name="content" value="/WEB-INF/view/pagina.jsp" />
-    </definition>
+
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+<tiles-definitions>  
+    <definition name="baseLayout" template="/WEB-INF/jsp/layout/template.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/layout/template/header.jsp" />  
+        <put-attribute name="navbar" value="/WEB-INF/layout/template/navbar.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/layout/template/footer.jsp" />  
+    </definition>  
     
+    <definition name="login" extends="baseLayout">  
+        <put-attribute name="title" value="Effettua il login" />  
+        <put-attribute name="body" value="/WEB-INF/view/login.jsp" />  
+    </definition>  
+  
+    <definition name="registrazione" extends="baseLayout">  
+        <put-attribute name="title" value="Effettua la registrazione" />  
+        <put-attribute name="body" value="/WEB-INF/view/form-utente.jsp" />  
+    </definition>  
+  
 </tiles-definitions>
-                

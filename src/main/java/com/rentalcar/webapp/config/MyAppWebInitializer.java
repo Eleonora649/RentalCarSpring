@@ -2,22 +2,18 @@ package com.rentalcar.webapp.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class DispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
+public class MyAppWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
 {
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Class[] { WebApplicationContextConfig.class }; //specifica la classe di configurazione
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() 
-	{ //specifica la classe più importante della nostra applicazione che è la classe di configurazione
-		return new Class[] 
-		{
-			WebApplicationContextConfig.class
-		};
+	{ 
+		return null;
 	}
 
 	@Override
